@@ -342,14 +342,14 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Train DOT-CBM on CelebA')
-    parser.add_argument('--data_dir', type=str, required=False, default='D:\BaiduNetdiskDownload\OTCBM-main\CelebA')
+    parser = argparse.ArgumentParser(description='Train TCPG-CBM on CelebA')
+    parser.add_argument('--data_dir', type=str, required=False, default='')
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--vit_model', type=str, default='vit_base_patch16_224')
     parser.add_argument('--clip_model', type=str, default='ViT-B-32')
-    parser.add_argument('--clip_pretrained', type=str, required=False, default='D:/BaiduNetdiskDownload/OTCBM-main/open_clip_pytorch_model.bin')
-    parser.add_argument('--vit_weights_path', type=str, required=False, default='D:\\BaiduNetdiskDownload\\OTCBM-main\\vit_base_p16_224-80ecf9dd.pth')
+    parser.add_argument('--clip_pretrained', type=str, required=False, default='')
+    parser.add_argument('--vit_weights_path', type=str, required=False, default='')
     parser.add_argument('--hidden_dim', type=int, default=256)
     parser.add_argument('--ot_reg', type=float, default=0.1)
     parser.add_argument('--dropout', type=float, default=0.1)
