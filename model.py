@@ -60,7 +60,7 @@ class PartDiscoveryHead(nn.Module):
         return z, w_norm, s, reg, maps
 
 
-class TCPG-CBM(nn.Module):
+class TCPG_CBM(nn.Module):
     """
     Disentangled Optimal Transport Concept Bottleneck Model
     
@@ -98,7 +98,7 @@ class TCPG-CBM(nn.Module):
         part_presence_weight: float = 0.1,
         concept_head: str = "nam"
     ):
-        super(TCPG-CBM, self).__init__()
+        super(TCPG_CBM, self).__init__()
         
         self.num_patches = num_patches
         self.num_concepts = num_concepts
@@ -417,7 +417,7 @@ if __name__ == '__main__':
     print("Testing DOT-CBM model...")
     
     # Create model
-    model = TCPG-CBM(
+    model = TCPG_CBM(
         num_patches=196,
         num_concepts=312,
         num_classes=200,
