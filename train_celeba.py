@@ -13,7 +13,7 @@ import torchvision
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 import sklearn.metrics
-from model import TCPG-CBM
+from model import TCPG_CBM
 from extractors import ViT_PatchExtractor_TCPA, ViT_PatchExtractor, CLIP_ConceptEncoder
 from data.celeba import CELEBA_CONFIG, CONCEPT_SEMANTICS, generate_data
 
@@ -226,7 +226,7 @@ def main(args):
         device=device,
         pretrained_path=args.clip_pretrained
     )
-    model = TCPG-CBM(
+    model = TCPG_CBM(
         num_patches=196,
         num_concepts=len(concept_names),
         num_classes=n_classes,
