@@ -14,13 +14,13 @@ from datetime import datetime
 import numpy as np
 import sklearn.metrics
 
-from model import DOT_CBM
+from model import TCPG-CBM
 from extractors import ViT_PatchExtractor, CLIP_ConceptEncoder, ViT_PatchExtractor_TCPA
 from data.data_util import get_dataset
 
 
 def train_epoch(
-    model: DOT_CBM,
+    model: TCPG-CBM,
     vit_extractor,
     clip_encoder,
     train_loader,
@@ -140,7 +140,7 @@ def train_epoch(
 
 @torch.no_grad()
 def evaluate(
-    model: DOT_CBM,
+    model: TCPG-CBM,
     vit_extractor: ViT_PatchExtractor,
     clip_encoder: CLIP_ConceptEncoder,
     data_loader,
@@ -275,7 +275,7 @@ def train(args):
             pretrained=False,
             freeze=True
         ).to(device)
-    model = DOT_CBM(
+    model = TCPG-CBM(
         num_patches=196,
         num_concepts=num_concepts,
         num_classes=num_classes,
@@ -436,14 +436,14 @@ def train(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Train DOT-CBM on AwA2 (data_util)')
-    parser.add_argument('--data_dir', type=str, required=False, default='D:/BaiduNetdiskDownload/OTCBM-main/AwA2-data/Animals_with_Attributes2')
+    parser = argparse.ArgumentParser(description='Train TCPG-CBM on AwA2 (data_util)')
+    parser.add_argument('--data_dir', type=str, required=False, default='')
     parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--num_workers', type=int, default=0)
     parser.add_argument('--vit_model', type=str, default='vit_base_patch16_224')
     parser.add_argument('--clip_model', type=str, default='ViT-B-32')
-    parser.add_argument('--clip_pretrained', type=str, required=False, default='D:/BaiduNetdiskDownload/OTCBM-main/open_clip_pytorch_model.bin')
-    parser.add_argument('--vit_weights_path', type=str, required=False, default='D:\\BaiduNetdiskDownload\\OTCBM-main\\vit_base_p16_224-80ecf9dd.pth')
+    parser.add_argument('--clip_pretrained', type=str, required=False, default='')
+    parser.add_argument('--vit_weights_path', type=str, required=False, default='')
     parser.add_argument('--hidden_dim', type=int, default=256)
     parser.add_argument('--ot_reg', type=float, default=0.1)
     parser.add_argument('--dropout', type=float, default=0.1)
