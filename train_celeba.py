@@ -13,7 +13,7 @@ import torchvision
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 import sklearn.metrics
-from model import DOT_CBM
+from model import TCPG-CBM
 from extractors import ViT_PatchExtractor_TCPA, ViT_PatchExtractor, CLIP_ConceptEncoder
 from data.celeba import CELEBA_CONFIG, CONCEPT_SEMANTICS, generate_data
 
