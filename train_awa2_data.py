@@ -14,13 +14,13 @@ from datetime import datetime
 import numpy as np
 import sklearn.metrics
 
-from model import TCPG-CBM
+from model import TCPG_CBM
 from extractors import ViT_PatchExtractor, CLIP_ConceptEncoder, ViT_PatchExtractor_TCPA
 from data.data_util import get_dataset
 
 
 def train_epoch(
-    model: TCPG-CBM,
+    model: TCPG_CBM,
     vit_extractor,
     clip_encoder,
     train_loader,
@@ -140,7 +140,7 @@ def train_epoch(
 
 @torch.no_grad()
 def evaluate(
-    model: TCPG-CBM,
+    model: TCPG_CBM,
     vit_extractor: ViT_PatchExtractor,
     clip_encoder: CLIP_ConceptEncoder,
     data_loader,
@@ -275,7 +275,7 @@ def train(args):
             pretrained=False,
             freeze=True
         ).to(device)
-    model = TCPG-CBM(
+    model = TCPG_CBM(
         num_patches=196,
         num_concepts=num_concepts,
         num_classes=num_classes,
