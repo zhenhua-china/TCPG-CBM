@@ -226,7 +226,7 @@ def main(args):
         device=device,
         pretrained_path=args.clip_pretrained
     )
-    model = DOT_CBM(
+    model = TCPG-CBM(
         num_patches=196,
         num_concepts=len(concept_names),
         num_classes=n_classes,
